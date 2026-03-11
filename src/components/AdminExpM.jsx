@@ -8,7 +8,7 @@ const AdminExpM = () => {
     const handleDeleteItem = async (idx, str) => {
         const isYes = confirm(`Are you sure delete the ${str}?`)
         if (isYes) {
-            await fetch(`http://localhost:3000/experience/${idx}`, {
+            await fetch(`https://portfolio-xbxy.onrender.com/experience/${idx}`, {
                 method: "DELETE"
             })
         }
@@ -22,7 +22,7 @@ const AdminExpM = () => {
     } = useForm()
 
     const onSubmit = async (data) => {
-        const res = await fetch("http://localhost:3000/experience", {
+        const res = await fetch("https://portfolio-xbxy.onrender.com/experience", {
             method: "POST",
             body: JSON.stringify(data),
             headers: {

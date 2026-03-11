@@ -8,7 +8,7 @@ const AdminProjM = () => {
     const handleDeleteItem = async (idx, str) =>{
         const isYes = confirm(`Are you sure delete the ${str}?`);
         if(isYes){
-            await fetch(`http://localhost:3000/project/${idx}`, {
+            await fetch(`https://portfolio-xbxy.onrender.com/project/${idx}`, {
                 method: "DELETE"
             })
         }
@@ -27,7 +27,7 @@ const AdminProjM = () => {
         frmdta.append("ProjectDesc", data.ProjectDesc)
         frmdta.append("ProjectImg", data.ProjectImg[0])
 
-        const res = await fetch("http://localhost:3000/project", {
+        const res = await fetch("https://portfolio-xbxy.onrender.com/project", {
             method: "POST",
             body: frmdta
         })

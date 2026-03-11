@@ -8,7 +8,7 @@ const AdminSkillM = () => {
     const handleDeleteItem = async (idx, str) =>{
         const isYes = confirm(`Are you sure delete the ${str}?`);
         if(isYes){
-            await fetch(`http://localhost:3000/skill/${idx}`, {
+            await fetch(`https://portfolio-xbxy.onrender.com/skill/${idx}`, {
                 method: "DELETE"
             })
         }
@@ -22,7 +22,7 @@ const AdminSkillM = () => {
     } = useForm()
 
     const onSubmit = async (data) => {
-        const res = await fetch("http://localhost:3000/skill", {
+        const res = await fetch("https://portfolio-xbxy.onrender.com/skill", {
             method: "POST",
             body: JSON.stringify(data),
             headers: {
