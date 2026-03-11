@@ -1,0 +1,242 @@
+.Admin h1{
+    color: white;
+    font-family: var(--heading-font);
+    font-size: 3.5rem;
+    text-align: center;
+    padding: 1rem 0;
+}
+
+.manager{
+    display: flex;
+}
+
+.manager > div {
+    border-top: 2px solid #4e11a9;
+    border-radius: 16px;
+    margin: 0.8rem;
+    padding: 1rem;
+    color: white;
+    background: linear-gradient(to right, #0e061c 10%, #31155b 50%, #0e061c 90%);
+}
+
+.manager .left{
+    flex: 1.5;
+}
+
+.manager .left form{
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.manager .left form h2{
+    font-family: var(--title-font);
+    font-size: 2rem;
+}
+
+.manager .left form > :nth-child(2){
+    width: 18rem;
+    font-size: 1.2rem;
+    padding: 4px 0.5rem;
+    background-color: rgba(255, 255, 255, 0.14);
+    color: white;
+    font-family: var(--para-font);
+    border-radius: 5px;
+}
+
+.manager .left form > textarea{
+    resize: none;
+    width: 18rem;
+    font-size: 1.2rem;
+    padding: 4px 0.5rem;
+    background-color: rgba(255, 255, 255, 0.14);
+    color: white;
+    font-family: var(--para-font);
+    border-radius: 5px;
+}
+
+.manager .left form > .error{
+    position: absolute;
+    bottom: 2.6rem;
+    color: red;
+    font-family: var(--para-font);
+    font-size: 1.2rem;
+}
+
+.manager .left form > input[type="submit"]{
+    margin-top: 1.4rem;
+    margin-bottom: 0.5rem;
+    padding: 4px 1.5rem;
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.14);
+    color: white;
+    font-family: var(--para-font);
+}
+
+.manager .left form > input[type="submit"]:hover{
+    cursor: pointer;
+}
+
+.manager .left form > input[type="submit"]:active{
+    transform: scale(0.9);
+}
+
+.manager .left form > input[type="file"]{
+    border: 1px solid white;
+    border-radius: 5px;
+    width: 18rem;
+    padding: 4px;
+    font-size: 1rem;
+}
+
+.manager .right{
+    flex: 3.5;
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    overflow-y: hidden;
+    gap: 1rem;
+}
+
+.manager .right::-webkit-scrollbar {
+    height: 6px;
+    width: 6px;
+}
+.manager .right::-webkit-scrollbar-thumb {
+    background: #4e11a9;
+    border-radius: 10px;
+}
+
+.manager .right .item{
+    width: 200px;
+    flex-shrink: 0;
+    border: 2px solid #4e11a9;
+    padding: 1rem 1.5rem;
+    border-radius: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+.manager .right .item h3{
+    font-family: var(--title-font);
+    font-size: 1.4rem;
+}
+
+.manager .right .item p{
+    font-family: var(--para-font);
+    font-size: 1rem;
+    text-align: justify;
+    height: 6.7rem;
+    overflow: hidden;
+}
+
+.manager .right .item button{
+    margin-top: 0.5rem;
+    padding: 4px 1.5rem;
+    font-size: 1.2rem;
+    border: 2px solid #4e11a9;
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.08);
+    color: white;
+    font-family: var(--para-font);
+    position: absolute;
+    bottom: 1rem;
+}
+
+.manager .right .item button:hover{
+    cursor: pointer;
+}
+
+.manager .right .item button:active{
+    transform: scale(0.9);
+}
+
+@media only screen and (max-width: 1024px) {
+    .Admin h1 {
+        font-size: 3rem;
+    }
+
+    .manager .left form h2 {
+        font-size: 1.8rem;
+    }
+
+    .manager .left form > :nth-child(2) {
+        width: 15rem;
+    }
+
+    .manager .left form > textarea {
+        width: 15rem;
+    }
+
+    .manager .left form > input[type="file"] {
+        width: 15rem;
+    }
+}
+
+@media only screen and (max-width: 632px) {
+    .Admin h1 {
+        font-size: 1.8rem;
+    }
+
+    .experience, .skills, .projects {
+        margin-bottom: 2rem;
+    }
+
+    .manager {
+        flex-direction: column;
+    }
+
+    .manager > div {
+        margin: 0.2rem 1rem;
+        padding: 0.8rem;
+    }
+
+    .manager .left form h2 {
+        font-size: 1.4rem;
+    }
+
+    .manager .left form > :nth-child(2) {
+        font-size: 0.9rem;
+    }
+
+    .manager .left form > textarea {
+        font-size: 0.9rem;
+    }
+
+    .manager .left form > input[type="submit"] {
+        margin-top: 1rem;
+        padding: 3px 1.2rem;
+        font-size: 1rem;
+    }
+
+    .manager .right .item {
+        padding: 0.8rem;
+        width: 180px;
+    }
+
+    .skills .right .item {
+        height: 7rem;
+    }
+
+    .manager .right .item h3 {
+        font-size: 1.2rem;
+    }
+
+    .manager .right .item p {
+        font-size: 0.9rem;
+        height: 5.8rem;
+    }
+
+    .manager .right .item button {
+        margin-top: 1rem;
+        padding: 3px 1.2rem;
+        font-size: 1rem;
+    }
+}

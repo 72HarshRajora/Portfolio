@@ -1,0 +1,7 @@
+App.jsx
+        -Home,           -Admin
+            -WorkEx         -ExpM
+            -Skills         -SkillM
+            -Projects       -ProjM
+
+

@@ -1,0 +1,89 @@
+.HaveSkills {
+    margin: 1.5rem auto;
+    width: 90%;
+}
+
+.HaveSkills h1 {
+    color: white;
+    font-family: var(--title-font);
+    font-size: 3rem;
+    display: flex;
+    justify-content: center;
+}
+
+.HaveSkills .slide {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin: 1rem;
+    padding: 1rem;
+    /* background: linear-gradient(to right, #0e061c 10%, #31155b 50%, #0e061c 90%); */
+    background-color: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(4px);
+    border-top: 3px solid #31155b;
+    border-bottom: 2px solid #31155b;
+    border-radius: 1rem;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    overflow-y: hidden;
+}
+
+.HaveSkills .slide::-webkit-scrollbar {
+    height: 6px;
+    width: 6px;
+}
+.HaveSkills .slide::-webkit-scrollbar-thumb {
+    background: #4e11a9;
+    border-radius: 10px;
+}
+
+.HaveSkills .slide .NoSkill{
+    font-family: var(--heading-font);
+    font-size: 2rem;
+    color: white;
+}
+
+.HaveSkills .slide .skill {
+    border: 1px solid white;
+    padding: 4px 0.5rem;
+    width: 10rem;
+    height: 2.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-family: var(--para-font);
+    color: white;
+    font-size: 1rem;
+    border-radius: 0.5rem;
+}
+
+@media only screen and (max-width: 1024px) {
+    .HaveSkills .slide{
+        margin: 0.8rem 0;
+        padding: 0.8rem;
+    }
+}
+
+@media only screen and (max-width: 632px) {
+    .HaveSkills h1 {
+        font-size: 2.1rem;
+    }
+
+    .HaveSkills .slide {
+        margin: 0.8rem 0;
+        padding: 0.8rem;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
+    }
+
+    .HaveSkills .slide .NoSkill{
+        font-size: 1.4rem;
+    }
+
+    .HaveSkills .slide .skill {
+        font-size: 0.7rem;
+        width: auto;
+    }
+}

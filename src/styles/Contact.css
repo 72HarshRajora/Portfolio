@@ -1,0 +1,85 @@
+.HaveContacts {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    margin: auto;
+    width: 90%;
+    border-bottom: 1px solid grey;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.HaveContacts h1 {
+    font-family: var(--title-font);
+    font-size: 3rem;
+    display: flex;
+    justify-content: center;
+}
+
+.HaveContacts p{
+    max-width: 42rem;
+    text-align: justify;
+    font-family: var(--para-font);
+    font-size: 1.2rem;
+    text-align: center;
+}
+
+.HaveContacts .email{
+    font-weight: 700;
+}
+
+.HaveContacts .links{
+    display: flex;
+    gap: 2rem;
+}
+
+.HaveContacts .links li {
+    list-style: none;
+}
+
+.HaveContacts .links li a{
+    color: white;
+    text-decoration: none;
+    padding: 12px;
+    border: 1px solid white;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.HaveContacts .links li a:hover{
+    background-color: #ffffff2b;
+}
+
+.HaveContacts .links li a img{
+    height: 1.5rem;
+}
+
+.HaveContacts .links li a #invert{
+    filter: invert(1);
+}
+
+@media only screen and (max-width: 632px) {
+    .HaveContacts {
+        padding: 1rem 0;
+    }
+
+    .HaveContacts h1 {
+        font-size: 2.1rem;
+    }
+
+    .HaveContacts p {
+        font-size: 1rem;
+    }
+
+    .HaveContacts .links li a {
+        padding: 10px;
+    }
+
+    .HaveContacts .links li a img {
+        height: 1.2rem;
+    }
+}

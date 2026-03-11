@@ -1,0 +1,30 @@
+.stars{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: var(--bg-color);
+    overflow: hidden;
+    z-index: -5;
+}
+
+.star{
+    position: absolute;
+    height: 3px;
+    width: 3px;
+    background-color: white;
+    border-radius: 50%;
+    opacity: 0.8;
+    box-shadow: 0 0 6px white;
+    animation: move linear infinite;
+}
+
+@keyframes move {
+    from{
+        transform: translate(0, 0);
+    }
+    to{
+        transform: translate(var(--moveX), var(--moveY));
+    }
+}

@@ -1,0 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Bakbak+One&family=Gemunu+Libre:wght@200..800&family=Iceberg&display=swap');
+
+:root{
+  --heading-font: "Iceberg", sans-serif;
+  --title-font: "Bakbak One", "Poppins", "Segoe UI";
+  --para-font: "Gemunu Libre", system-ui, serif;
+  --bg-color: #110720;
+}
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body{
+  margin-top: 78px;
+}
+
+@media only screen and (max-width: 632px) {
+  body{
+    margin-top: 64px;
+  }
+}

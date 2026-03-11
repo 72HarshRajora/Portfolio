@@ -1,0 +1,58 @@
+.Im{
+    width: 90%;
+    margin: auto;
+}
+
+.Im h1{
+    font-family: var(--heading-font);
+    font-weight: 900;
+    font-size: 3.5rem;
+}
+
+.Im h1 .blink {
+    font-weight: bold;
+    animation: blink 0.6s steps(1, start) infinite;
+}
+
+@keyframes blink {
+    50%{
+        opacity: 0;
+    }
+}
+
+.Im p{
+    margin: 4px 0;
+    font-family: var(--para-font);
+    font-size: 1.2rem;
+}
+
+.Im .summary p{
+    max-width: 42rem;
+    text-align: justify;
+    margin: 3rem 0;
+    font-family: var(--para-font);
+    font-size: 1.2rem;
+}
+
+@media only screen and (max-width: 1024px) {
+    .Im .summary p {
+        margin: 2rem 0;
+    }
+}
+
+@media only screen and (max-width: 632px) {
+    .Im h1{
+        font-size: 2.8rem;
+        text-align: center;
+        height: 110px;
+    }
+
+    .Im p {
+        font-size: 1rem;
+    }
+
+    .Im .summary p{
+        font-size: 1rem;
+        margin: 1.6rem 0;
+    }
+}
