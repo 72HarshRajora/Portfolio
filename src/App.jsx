@@ -18,9 +18,9 @@ function App() {
   useEffect(() => {
     const fetchData = async () => {
       const [expRes, skillRes, projRes] = await Promise.all([
-        fetch("http://localhost:3000/experience"),
-        fetch("http://localhost:3000/skill"),
-        fetch("http://localhost:3000/project")
+        fetch("https://portfolio-xbxy.onrender.com/experience"),
+        fetch("https://portfolio-xbxy.onrender.com/skill"),
+        fetch("https://portfolio-xbxy.onrender.com/project")
       ])
 
       const exp = await expRes.json()
