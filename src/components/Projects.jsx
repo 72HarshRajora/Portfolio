@@ -1,6 +1,6 @@
 import React, { useContext } from 'react'
 import "../styles/Projects.css"
-import Laptop from "../assets/Laptop.svg"
+import Laptop from "../assets/laptop.svg"
 import { dataContext } from '../context/dataContext'
 
 const Projects = () => {
