@@ -22,15 +22,13 @@ const AdminExpM = () => {
     } = useForm()
 
     const onSubmit = async (data) => {
-        const res = await fetch("https://portfolio-xbxy.onrender.com/experience", {
+        await fetch("https://portfolio-xbxy.onrender.com/experience", {
             method: "POST",
             body: JSON.stringify(data),
             headers: {
                 "Content-Type": "application/json"
             }
         });
-        const resData = await res.json()
-        alert(resData.message)
         reset();
     }
 

@@ -27,12 +27,10 @@ const AdminProjM = () => {
         frmdta.append("ProjectDesc", data.ProjectDesc)
         frmdta.append("ProjectImg", data.ProjectImg[0])
 
-        const res = await fetch("https://portfolio-xbxy.onrender.com/project", {
+        await fetch("https://portfolio-xbxy.onrender.com/project", {
             method: "POST",
             body: frmdta
         })
-        const resData = await res.json()
-        alert(resData)
         reset();
     }
 
