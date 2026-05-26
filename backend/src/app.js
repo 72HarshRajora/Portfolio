@@ -6,6 +6,7 @@ import skillModel from "../models/skill.model.js"
 import projModel from "../models/proj.model.js"
 import bcrypt from "bcrypt"
 import cookieParser from "cookie-parser"
+import adminModel from "../models/admin.js"
 
 const app = express()
 
