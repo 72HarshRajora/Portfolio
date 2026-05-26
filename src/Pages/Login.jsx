@@ -27,6 +27,7 @@ const Login = () => {
             headers: {
                 "Content-type": "application/json"
             },
+            credentials: "include",
             method: "POST",
             body: JSON.stringify(data)
         })
@@ -58,7 +59,7 @@ const Login = () => {
                     <input type="password" id='pass' name='password' value={data.password} onChange={handleChange}/>
                 </div>
                 <div className="buttons">
-                    <button type="submit" onClick={()=>setLoading(true)} disabled={loading}>{loading ? "Logging" : "Login"}</button>
+                    <button type="submit" onClick={()=>setLoading(true)} disabled={loading}>{loading ? "Logging..." : "Login"}</button>
                     <button type="button" onClick={() => navigate(-1)}>Back</button>
                 </div>
             </form>
