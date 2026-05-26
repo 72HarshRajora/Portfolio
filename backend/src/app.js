@@ -7,9 +7,11 @@ import projModel from "../models/proj.model.js"
 import bcrypt from "bcrypt"
 import cookieParser from "cookie-parser"
 import adminModel from "../models/admin.js"
+import jwt from "jsonwebtoken"
 
 const app = express()
 
+app.use(cookieParser())
 app.use(express.json())
 app.use(cors())
 
@@ -121,7 +123,7 @@ app.post("/register-admin", async (req, res) => {
     const { email, password } = req.body
 
     const admin = await adminModel.findOne({ email })
-    if(admin){
+    if (admin) {
         return res.status(409).json({
             message: "Admin already exists."
         })
@@ -137,6 +139,55 @@ app.post("/register-admin", async (req, res) => {
     res.status(200).json({
         message: "Admin Registered Successfully."
     })
+})
+
+app.post("/login", async (req, res) => {
+    const { email, password } = req.body
+
+    const admin = await adminModel.findOne({ email })
+
+    const isCorrect = await bcrypt.compare(password, admin.password)
+
+    if (!isCorrect) {
+        return res.status(400).json({
+            message: "Invalid Credential."
+        })
+    }
+
+    const token = jwt.sign({
+        id: admin._id,
+        email: admin.email
+    }, process.env.JWT_SECRET)
+
+    res.cookie("Rajora's-Token", token, {
+        maxAge: 24 * 60 * 60 * 1000
+    })
+
+    res.status(200).json({
+        message: "Admin logged in successfully."
+    })
+})
+
+app.get("/admin", (req, res) => {   
+    const token = req.cookies["Rajora's-Token"]
+
+    if (!token) {
+        return res.status(401).json({
+            message: "Unauthorized Admin."
+        })
+    }
+
+    try {
+        jwt.verify(token, process.env.JWT_SECRET)
+
+        res.status(200).json({
+            success: true
+        })
+    } catch (err) {
+        return res.status(401).json({
+            message: "Unauthorized user."
+        })
+    }
 })
 
 export default app

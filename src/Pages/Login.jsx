@@ -1,7 +1,8 @@
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import "../styles/Login.css"
 import BgStars from '../components/BgStars'
 import { useNavigate } from 'react-router-dom'
+import toast from 'react-hot-toast'
 
 const Login = () => {
     const navigate = useNavigate()
@@ -21,7 +22,7 @@ const Login = () => {
 
     const handleSubmit = async (data) => {
 
-        const res = await fetch("https://portfolio-xbxy.onrender.com/register-admin", {
+        const res = await fetch("https://portfolio-xbxy.onrender.com/login", {
             headers: {
                 "Content-type": "application/json"
             },
@@ -30,7 +31,12 @@ const Login = () => {
         })
 
         const result = await res.json()
-        console.log(result)
+        if(!res.ok){
+            toast.error(result.message)
+            return
+        }
+        toast.success(result.message)
+        navigate("/admin")
     }
 
     return (
