@@ -9,6 +9,7 @@ import Home from "./Pages/Home"
 import { dataContext } from "./context/dataContext"
 import PageNotFound from "./Pages/PageNotFound"
 import Login from "./Pages/Login"
+import ProtectedRoute from "./components/ProtectedRoute"
 
 function App() {
 
@@ -51,7 +52,14 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/login" element={<Login />} />
-          <Route path="/admin" element={<Admin />} />
+          <Route
+            path="/admin"
+            element={
+              <ProtectedRoute>
+                <Admin />
+              </ProtectedRoute>
+            }
+          />
           <Route path="*" element={<PageNotFound />} />
         </Routes>
       </dataContext.Provider>
