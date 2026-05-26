@@ -25,6 +25,16 @@ const Admin = () => {
       verifyToken()
     }, [])
 
+    const handleLogout = async () => {
+        const res = await fetch("https://portfolio-xbxy.onrender.com/logout", {
+            credentials: "include"
+        })
+
+        const result = await res.json()
+        toast.success(result.message)
+        navigate("/")
+    }
+
     return (
         <div className='Admin'>
             <BgStars />
@@ -32,6 +42,7 @@ const Admin = () => {
             <AdminExpM />
             <AdminSkillM />
             <AdminProjM />
+            <button type="button" onClick={handleLogout}>Logout</button>
         </div>
     )
 }
