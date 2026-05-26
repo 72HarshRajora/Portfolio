@@ -8,6 +8,7 @@ import WorkExperience from "./components/WorkExperience"
 import Home from "./Pages/Home"
 import { dataContext } from "./context/dataContext"
 import PageNotFound from "./Pages/PageNotFound"
+import Login from "./Pages/Login"
 
 function App() {
 
@@ -49,6 +50,7 @@ function App() {
         <Navbar />
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/login" element={<Login />} />
           <Route path="/admin" element={<Admin />} />
           <Route path="*" element={<PageNotFound />} />
         </Routes>

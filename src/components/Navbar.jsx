@@ -10,7 +10,7 @@ const Navbar = () => {
       </div>
       <ul>
         <li><NavLink to="/" className={(e)=>{return e.isActive?"red":""}}>Home</NavLink></li>
-        <li><NavLink to="/admin" className={(e)=>{return e.isActive?"red":""}}>Admin</NavLink></li>
+        <li><NavLink to="/login" className={(e)=>{return e.isActive?"red":""}}>Admin</NavLink></li>
       </ul>
     </nav>
   )

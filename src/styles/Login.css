@@ -1,0 +1,159 @@
+.login-page {
+    min-height: calc(100vh - 78px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    position: relative;
+    z-index: 1;
+}
+
+.login-page form {
+    width: min(100%, 28rem);
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.4rem;
+    border-radius: 18px;
+    border-top: 2px solid #4e11a9;
+    background: linear-gradient(to right, #0e061c 10%, #31155b 50%, #0e061c 90%);
+    backdrop-filter: blur(14px);
+    box-shadow: 0 0 24px rgba(78, 17, 169, 0.25);
+    color: white;
+    position: relative;
+    z-index: 2;
+}
+
+.login-page form h1 {
+    font-family: var(--heading-font);
+    font-size: 2.6rem;
+    text-align: center;
+    margin-bottom: 0.5rem;
+}
+
+.login-page form .input {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.login-page form .input label {
+    font-family: var(--title-font);
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.login-page form .input input {
+    width: 100%;
+    padding: 12px 14px;
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    background: rgba(255, 255, 255, 0.08);
+    color: white;
+    font-family: var(--para-font);
+    font-size: 1rem;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+.login-page form .input input::placeholder {
+    color: rgba(255, 255, 255, 0.55);
+}
+
+.login-page form .input input:focus {
+    border-color: #7c3aed;
+    box-shadow: 0 0 12px rgba(124, 58, 237, 0.4);
+    background: rgba(255, 255, 255, 0.12);
+}
+
+.login-page form .buttons {
+    display: flex;
+    gap: 1rem;
+    margin-top: 0.8rem;
+}
+
+.login-page form .buttons button {
+    flex: 1;
+    padding: 12px 16px;
+    font-size: 1rem;
+    border: 2px solid #4e11a9;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.08);
+    color: white;
+    font-family: var(--para-font);
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+
+.login-page form .buttons button:first-child {
+    background: linear-gradient(135deg, #7c3aed, #4e11a9);
+    border: none;
+}
+
+.login-page form .buttons button:last-child {
+    background: transparent;
+}
+
+.login-page form .buttons button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 18px rgba(124, 58, 237, 0.35);
+}
+
+.login-page form .buttons button:active {
+    transform: scale(0.97);
+}
+
+@media only screen and (max-width: 1024px) {
+    .login-page form {
+        width: min(100%, 24rem);
+        padding: 1.8rem;
+    }
+
+    .login-page form h1 {
+        font-size: 2.2rem;
+    }
+
+    .login-page form .input input {
+        padding: 11px 13px;
+    }
+}
+
+@media only screen and (max-width: 632px) {
+    .login-page {
+        padding: 0.8rem;
+    }
+
+    .login-page form {
+        width: 92%;
+        padding: 1.2rem;
+        gap: 1rem;
+        border-radius: 14px;
+    }
+
+    .login-page form h1 {
+        font-size: 1.7rem;
+    }
+
+    .login-page form .input label {
+        font-size: 0.9rem;
+    }
+
+    .login-page form .input input {
+        padding: 10px 12px;
+        font-size: 0.92rem;
+        border-radius: 8px;
+    }
+
+    .login-page form .buttons {
+        flex-direction: column;
+        gap: 0.8rem;
+    }
+
+    .login-page form .buttons button {
+        width: 100%;
+        padding: 11px;
+        font-size: 0.92rem;
+        border-radius: 8px;
+    }
+}

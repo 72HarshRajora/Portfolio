@@ -4,6 +4,8 @@ import multer from "multer"
 import expModel from "../models/exp.model.js"
 import skillModel from "../models/skill.model.js"
 import projModel from "../models/proj.model.js"
+import bcrypt from "bcrypt"
+import cookieParser from "cookie-parser"
 
 const app = express()
 
@@ -68,14 +70,14 @@ app.get("/skill", async (req, res) => {
 
 app.get("/project", async (req, res) => {
     const data = await projModel.find()
-    const formattedData = data.map(item =>{
+    const formattedData = data.map(item => {
         return ({
             _id: item._id,
             ProjectName: item.ProjectName,
             ProjectDesc: item.ProjectDesc,
             ProjectImg: item.ProjectImg
-                        ? `data:${item.ImgType};base64,${item.ProjectImg.toString("base64")}`
-                        : null
+                ? `data:${item.ImgType};base64,${item.ProjectImg.toString("base64")}`
+                : null
         })
     })
 
@@ -110,6 +112,29 @@ app.delete("/project/:index", async (req, res) => {
 
     res.status(200).json({
         message: "Project deleted successfully."
+    })
+})
+
+
+app.post("/register-admin", async (req, res) => {
+    const { email, password } = req.body
+
+    const admin = await adminModel.findOne({ email })
+    if(admin){
+        return res.status(409).json({
+            message: "Admin already exists."
+        })
+    }
+
+    const hashedPassword = await bcrypt.hash(password, 10)
+
+    await adminModel.create({
+        email,
+        password: hashedPassword
+    })
+
+    res.status(200).json({
+        message: "Admin Registered Successfully."
     })
 })
 
