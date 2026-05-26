@@ -35,6 +35,7 @@ const Login = () => {
         const result = await res.json()
         if(!res.ok){
             toast.error(result.message)
+            setLoading(false)
             return
         }
         toast.success(result.message)

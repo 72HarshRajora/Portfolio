@@ -167,6 +167,9 @@ app.post("/login", async (req, res) => {
     }, process.env.JWT_SECRET)
 
     res.cookie("Rajora's-Token", token, {
+        httpOnly: true,
+        secure: true,
+        sameSite: "none",
         maxAge: 24 * 60 * 60 * 1000
     })
 
@@ -175,7 +178,7 @@ app.post("/login", async (req, res) => {
     })
 })
 
-app.get("/admin", (req, res) => {   
+app.get("/admin", (req, res) => {
     const token = req.cookies["Rajora's-Token"]
 
     if (!token) {
