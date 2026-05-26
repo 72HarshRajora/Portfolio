@@ -6,6 +6,7 @@ import toast from 'react-hot-toast'
 
 const Login = () => {
     const navigate = useNavigate()
+    const [loading, setLoading] = useState(false)
 
     const [data, setData] = useState({
         email: "",
@@ -36,6 +37,7 @@ const Login = () => {
             return
         }
         toast.success(result.message)
+        setLoading(false)
         navigate("/admin")
     }
 
@@ -56,7 +58,7 @@ const Login = () => {
                     <input type="password" id='pass' name='password' value={data.password} onChange={handleChange}/>
                 </div>
                 <div className="buttons">
-                    <button type="submit">Login</button>
+                    <button type="submit" onClick={()=>setLoading(true)} disabled={loading}>{loading ? "Logging" : "Login"}</button>
                     <button type="button" onClick={() => navigate(-1)}>Back</button>
                 </div>
             </form>
