@@ -22,6 +22,7 @@ const Login = () => {
     }
 
     const handleSubmit = async (data) => {
+        setLoading(true)
 
         const res = await fetch("https://portfolio-xbxy.onrender.com/login", {
             headers: {
@@ -60,7 +61,7 @@ const Login = () => {
                     <input type="password" id='pass' name='password' value={data.password} onChange={handleChange}/>
                 </div>
                 <div className="buttons">
-                    <button type="submit" onClick={()=>setLoading(true)} disabled={loading}>{loading ? "Logging..." : "Login"}</button>
+                    <button type="submit" disabled={loading}>{loading ? "Logging..." : "Login"}</button>
                     <button type="button" onClick={() => navigate(-1)}>Back</button>
                 </div>
             </form>

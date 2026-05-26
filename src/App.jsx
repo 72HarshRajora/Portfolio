@@ -34,7 +34,7 @@ function App() {
     }
 
     fetchData()
-  }, [expData, skillData, projData])
+  }, [])    // expData, skillData, projData
 
 
   return (
