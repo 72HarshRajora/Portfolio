@@ -44,6 +44,20 @@ const Login = () => {
         navigate("/admin")
     }
 
+    const verifyToken = async () => {
+        const res = await fetch("https://portfolio-xbxy.onrender.com/admin", {
+            credentials: "include"
+        })
+        if(res.ok){
+            navigate("/admin")
+        }
+    }
+
+    useEffect(() => {
+      verifyToken
+    }, [])
+    
+
     return (
         <div className='login-page'>
             <BgStars />
