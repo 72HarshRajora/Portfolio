@@ -13,7 +13,14 @@ const app = express()
 
 app.use(cookieParser())
 app.use(express.json())
-app.use(cors())
+app.use(cors({
+    origin: [
+        "http://localhost:5173",
+        "https://www.72harshrajora.in",
+        "https://72harshrajora.in"
+    ],
+    credentials: true
+}))
 
 // AI use here for multer
 const storage = multer.memoryStorage();
