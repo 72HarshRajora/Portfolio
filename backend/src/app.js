@@ -208,7 +208,11 @@ app.get("/admin", (req, res) => {
 })
 
 app.post("/logout", (req, res) => {
-    res.clearCookie("Rajora-Token")
+    res.clearCookie("Rajora-Token", {
+        httpOnly: true,
+        secure: true,
+        sameSite: "None"
+    })
 
     res.status(200).json({
         message: "Admin logged out successfully."
