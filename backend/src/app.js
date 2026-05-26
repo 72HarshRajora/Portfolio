@@ -173,7 +173,7 @@ app.post("/login", async (req, res) => {
         email: admin.email
     }, process.env.JWT_SECRET)
 
-    res.cookie("Rajora's-Token", token, {
+    res.cookie("Rajora-Token", token, {
         httpOnly: true,
         secure: true,
         sameSite: "none",
@@ -186,7 +186,7 @@ app.post("/login", async (req, res) => {
 })
 
 app.get("/admin", (req, res) => {
-    const token = req.cookies["Rajora's-Token"]
+    const token = req.cookies["Rajora-Token"]
 
     if (!token) {
         return res.status(401).json({
@@ -208,7 +208,7 @@ app.get("/admin", (req, res) => {
 })
 
 app.get("/logout", (req, res) => {
-    res.clearCookie("Rajora's-Token")
+    res.clearCookie("Rajora-Token")
 
     res.status(200).json({
         message: "Admin logged out successfully."
