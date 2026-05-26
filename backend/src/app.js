@@ -176,7 +176,7 @@ app.post("/login", async (req, res) => {
     res.cookie("Rajora-Token", token, {
         httpOnly: true,
         secure: true,
-        sameSite: "none",
+        sameSite: "None",
         maxAge: 24 * 60 * 60 * 1000
     })
 
@@ -207,7 +207,7 @@ app.get("/admin", (req, res) => {
     }
 })
 
-app.get("/logout", (req, res) => {
+app.post("/logout", (req, res) => {
     res.clearCookie("Rajora-Token")
 
     res.status(200).json({

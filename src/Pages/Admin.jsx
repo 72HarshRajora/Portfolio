@@ -12,7 +12,8 @@ const Admin = () => {
 
     const handleLogout = async () => {
         const res = await fetch("https://portfolio-xbxy.onrender.com/logout", {
-            credentials: "include"
+            credentials: "include",
+            method: "POST"
         })
 
         const result = await res.json()
