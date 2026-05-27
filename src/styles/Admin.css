@@ -130,6 +130,7 @@
 }
 
 .manager .right .item p{
+    max-width: -webkit-fill-available;
     font-family: var(--para-font);
     font-size: 1rem;
     text-align: justify;
