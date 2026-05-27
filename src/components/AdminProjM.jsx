@@ -41,7 +41,7 @@ const AdminProjM = () => {
                     <h2>Projects</h2>
                     <input type="text" {...register("ProjectName", {required: {value: true, message: "All sections are required"}, minLength: { value: 4, message: "Min length is 4." }, maxLength: { value: 20, message: "Max length exceeded." } })} className="title" placeholder='Enter Project Name' />
 
-                    <textarea {...register("ProjectDesc", {required: {value: true, message: "All sections are required"}, minLength: { value: 4, message: "Min length is 4." }, maxLength: { value: 140, message: "Max length exceeded." } })} className="description" placeholder='Project Description'></textarea>
+                    <textarea {...register("ProjectDesc", {required: {value: true, message: "All sections are required"}, minLength: { value: 4, message: "Min length is 4." }, maxLength: { value: 200, message: "Max length exceeded." } })} className="description" placeholder='Project Description'></textarea>
 
                     <input type="file" {...register("ProjectImg", {required: {value: true, message: "All sections are required"}})} accept='.jpg, .jpeg, .png' />
 
