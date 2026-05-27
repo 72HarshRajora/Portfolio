@@ -4,6 +4,7 @@ import { dataContext } from '../context/dataContext'
 
 const AdminSkillM = () => {
     const {skillData, setSkillData} = useContext(dataContext)
+    const { refetchData } = useContext(dataContext)
 
     const handleDeleteItem = async (idx, str) =>{
         const isYes = confirm(`Are you sure delete the ${str}?`);
@@ -29,6 +30,7 @@ const AdminSkillM = () => {
                 "Content-Type": "application/json"
             }
         })
+        await refetchData()
         reset();
     }
 
