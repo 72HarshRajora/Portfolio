@@ -1,40 +1,47 @@
-import {useState, useEffect, useRef} from 'react'
+import { useState, useEffect, useRef } from 'react'
 import "../styles/HeroBottom.css"
 
-const title = ["Frontend Developer", "Software Engineer", "Full Stack Developer", "React Developer", "Java Developer", "Web Developer"]
+const title = [
+  "Frontend Developer",
+  "Full Stack Developer",
+  "React Developer",
+  "Web Developer",
+  "Frontend Engineer",
+  "MERN Stack Developer"
+]
 
 const HeroBottom = () => {
-    const wordIdx = useRef(0);
-    const [displayWord, setDisplayWord] = useState("");
-    const [isDeleting, setIsDeleting] = useState(false);
+  const wordIdx = useRef(0);
+  const [displayWord, setDisplayWord] = useState("");
+  const [isDeleting, setIsDeleting] = useState(false);
 
-    useEffect(() => {
-      const speed = isDeleting ? 50 : 100;
-      const currentWord = title[wordIdx.current]
+  useEffect(() => {
+    const speed = isDeleting ? 50 : 100;
+    const currentWord = title[wordIdx.current]
 
-      const timer = setTimeout(() => {
-        if(!isDeleting){
-            setDisplayWord(currentWord.slice(0, displayWord.length+1))
+    const timer = setTimeout(() => {
+      if (!isDeleting) {
+        setDisplayWord(currentWord.slice(0, displayWord.length + 1))
 
-            if(displayWord.length+1 === currentWord.length){
-                setTimeout(() => {
-                    setIsDeleting(true)
-                }, 1000);
-            }
+        if (displayWord.length + 1 === currentWord.length) {
+          setTimeout(() => {
+            setIsDeleting(true)
+          }, 1000);
         }
-        else{
-            setDisplayWord(currentWord.slice(0, displayWord.length-1))
+      }
+      else {
+        setDisplayWord(currentWord.slice(0, displayWord.length - 1))
 
-            if(displayWord.length-1 === 0){
-                setIsDeleting(false)
-                wordIdx.current = (wordIdx.current+1) % title.length
-            }
+        if (displayWord.length - 1 === 0) {
+          setIsDeleting(false)
+          wordIdx.current = (wordIdx.current + 1) % title.length
         }
-      }, speed);
+      }
+    }, speed);
 
-      return () => clearTimeout(timer)
-    }, [displayWord, isDeleting])
-    
+    return () => clearTimeout(timer)
+  }, [displayWord, isDeleting])
+
 
   return (
     <div className='Im'>
