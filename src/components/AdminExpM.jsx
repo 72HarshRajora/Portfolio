@@ -4,6 +4,7 @@ import { dataContext } from '../context/dataContext'
 
 const AdminExpM = () => {
     const { expData, setExpData } = useContext(dataContext)
+    const { refetchData } = useContext(dataContext)
 
     const handleDeleteItem = async (idx, str) => {
         const isYes = confirm(`Are you sure delete the ${str}?`)
@@ -29,6 +30,7 @@ const AdminExpM = () => {
                 "Content-Type": "application/json"
             }
         });
+        await refetchData()
         reset();
     }
 
