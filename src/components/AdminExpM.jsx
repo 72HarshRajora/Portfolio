@@ -39,7 +39,7 @@ const AdminExpM = () => {
                     <h2>Work Experience</h2>
                     <input type="text" {...register("CompanyName", { required: { value: true, message: "All sections are required" }, minLength: { value: 4, message: "Min length is 4." }, maxLength: { value: 20, message: "Max length exceeded." } })} className="title" placeholder='Enter Company Name' />
 
-                    <textarea {...register("CompanyDesc", { required: { value: true, message: "All sections are required" }, minLength: { value: 4, message: "Min length is 4." }, maxLength: { value: 80, message: "Max length exceeded." } })} className="description" placeholder='Enter Description'></textarea>
+                    <textarea {...register("CompanyDesc", { required: { value: true, message: "All sections are required" }, minLength: { value: 4, message: "Min length is 4." }, maxLength: { value: 120, message: "Max length exceeded." } })} className="description" placeholder='Enter Description'></textarea>
 
                     {errors.CompanyName && <div className="error">{errors.CompanyName.message}</div>}
                     {errors.CompanyDesc && <div className="error">{errors.CompanyDesc.message}</div>}
