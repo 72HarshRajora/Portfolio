@@ -17,8 +17,7 @@ function App() {
   const [skillData, setSkillData] = useState([])
   const [projData, setProjData] = useState([])
 
-  useEffect(() => {
-    const fetchData = async () => {
+      const fetchData = async () => {
       const [expRes, skillRes, projRes] = await Promise.all([
         fetch("https://portfolio-xbxy.onrender.com/experience"),
         fetch("https://portfolio-xbxy.onrender.com/skill"),
@@ -33,7 +32,8 @@ function App() {
       setSkillData(skill.data)
       setProjData(proj.data)
     }
-
+  
+  useEffect(() => {
     fetchData()
   }, [])  // expData, skillData, projData
 
@@ -46,7 +46,8 @@ function App() {
         skillData,
         setSkillData,
         projData,
-        setProjData
+        setProjData,
+        refetchData: fetchData  // 👈 bas usi function ka reference pass kar diya
       }}>
         <Navbar />
         <Routes>
