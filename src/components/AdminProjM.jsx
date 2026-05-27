@@ -4,6 +4,7 @@ import { dataContext } from '../context/dataContext'
 
 const AdminProjM = () => {
     const {projData, setProjData} = useContext(dataContext)
+    const { refetchData } = useContext(dataContext)
 
     const handleDeleteItem = async (idx, str) =>{
         const isYes = confirm(`Are you sure delete the ${str}?`);
@@ -31,6 +32,7 @@ const AdminProjM = () => {
             method: "POST",
             body: frmdta
         })
+        await refetchData()
         reset();
     }
 
