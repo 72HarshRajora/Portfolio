@@ -12,6 +12,7 @@ const AdminExpM = () => {
             await fetch(`https://portfolio-xbxy.onrender.com/experience/${idx}`, {
                 method: "DELETE"
             })
+            await refetchData()
         }
     }
 
