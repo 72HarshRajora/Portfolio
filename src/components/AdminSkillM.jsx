@@ -12,6 +12,7 @@ const AdminSkillM = () => {
             await fetch(`https://portfolio-xbxy.onrender.com/skill/${idx}`, {
                 method: "DELETE"
             })
+            await refetchData()
         }
     }
 
