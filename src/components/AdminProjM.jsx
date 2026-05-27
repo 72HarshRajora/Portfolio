@@ -12,6 +12,7 @@ const AdminProjM = () => {
             await fetch(`https://portfolio-xbxy.onrender.com/project/${idx}`, {
                 method: "DELETE"
             })
+            await refetchData()
         }
     }
 
