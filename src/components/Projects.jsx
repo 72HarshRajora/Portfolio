@@ -10,7 +10,11 @@ const Projects = () => {
         <div className='HaveProjects'>
             <h1>Featured Project</h1>
             <div className="ProjectContainer">
-                {loading ? <div className="Project">Loading...</div> : (
+                {loading ? <div className="Project">
+                    <div className="title">
+                        <h2>Loading...</h2>
+                    </div>
+                </div> : (
                     projData.length === 0 ? (<div className="Project">
                         <div className="image">
                             <img className="contain" src={Laptop} alt="Laptop SVG" />
