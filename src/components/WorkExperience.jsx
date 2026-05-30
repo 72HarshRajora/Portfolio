@@ -5,7 +5,7 @@ import workSVG from "../assets/work.svg"
 
 const WorkExperience = () => {
 
-  const { expData } = useContext(dataContext)
+  const { expData, loading } = useContext(dataContext)
 
   return (
     <div className='work'>
