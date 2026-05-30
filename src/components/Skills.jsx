@@ -3,13 +3,15 @@ import "../styles/Skills.css"
 import { dataContext } from '../context/dataContext'
 
 const Skills = () => {
-    const { skillData } = useContext(dataContext);
+    const { skillData, loading } = useContext(dataContext);
 
     return (
         <div className='HaveSkills'>
             <h1>Skills</h1>
             <div className="slide">
-                {skillData.length === 0 ? (
+                {loading ? <div className="skill">
+                    <h1>Loading...</h1>
+                </div> : (skillData.length === 0 ? (
                     <div className='NoSkill'>No skills to show</div>
                 ) : skillData.map((item, i) => {
                     return (
@@ -17,7 +19,8 @@ const Skills = () => {
                             <h2>{item.SkillName}</h2>
                         </div>
                     )
-                })}
+                }))
+                }
             </div>
         </div>
     )
