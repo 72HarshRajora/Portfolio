@@ -11,7 +11,11 @@ const WorkExperience = () => {
     <div className='work'>
       <h1>Work Experience</h1>
       <div className="gridEx">
-        {expData.length === 0 ? (
+        {loading ? <div className="Expr">
+          <div className="text">
+            <h2>Loading...</h2>
+          </div>
+        </div> : (expData.length === 0 ? (
           <div className="Expr">
             <div className="image">
               <img src={workSVG} alt="Work" />
@@ -33,7 +37,7 @@ const WorkExperience = () => {
               </div>
             </div>
           )
-        })}
+        }))}
       </div>
     </div>
   )
