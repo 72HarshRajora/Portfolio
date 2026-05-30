@@ -10,7 +10,7 @@ const Skills = () => {
             <h1>Skills</h1>
             <div className="slide">
                 {loading ? <div className="skill">
-                    <h1>Loading...</h1>
+                    <h2>Loading...</h2>
                 </div> : (skillData.length === 0 ? (
                     <div className='NoSkill'>No skills to show</div>
                 ) : skillData.map((item, i) => {
