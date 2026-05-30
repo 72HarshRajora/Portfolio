@@ -17,22 +17,26 @@ function App() {
   const [skillData, setSkillData] = useState([])
   const [projData, setProjData] = useState([])
 
-      const fetchData = async () => {
-      const [expRes, skillRes, projRes] = await Promise.all([
-        fetch("https://portfolio-xbxy.onrender.com/experience"),
-        fetch("https://portfolio-xbxy.onrender.com/skill"),
-        fetch("https://portfolio-xbxy.onrender.com/project")
-      ])
+  const [loading, setLoading] = useState(true)
 
-      const exp = await expRes.json()
-      const skill = await skillRes.json()
-      const proj = await projRes.json()
+  const fetchData = async () => {
+    const [expRes, skillRes, projRes] = await Promise.all([
+      fetch("https://portfolio-xbxy.onrender.com/experience"),
+      fetch("https://portfolio-xbxy.onrender.com/skill"),
+      fetch("https://portfolio-xbxy.onrender.com/project")
+    ])
 
-      setExpData(exp.data)
-      setSkillData(skill.data)
-      setProjData(proj.data)
-    }
-  
+    const exp = await expRes.json()
+    const skill = await skillRes.json()
+    const proj = await projRes.json()
+
+    setExpData(exp.data)
+    setSkillData(skill.data)
+    setProjData(proj.data)
+
+    setLoading(false)
+  }
+
   useEffect(() => {
     fetchData()
   }, [])  // expData, skillData, projData
@@ -47,6 +51,8 @@ function App() {
         setSkillData,
         projData,
         setProjData,
+        loading,
+        setLoading,
         refetchData: fetchData  // 👈 bas usi function ka reference pass kar diya
       }}>
         <Navbar />
